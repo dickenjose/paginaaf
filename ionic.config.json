@@ -1,0 +1,7 @@
+{
+  "name": "afondo",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
