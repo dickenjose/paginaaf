@@ -1,0 +1,40 @@
+
+<ion-grid fixed class="todo" >
+  <ion-row>
+    <ion-col size="12">
+      <h1>Noticias al Instante</h1>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+<ion-grid fixed>
+  <ion-row>
+    <ion-col size="12" size-lg="3" size-md="4" size-sm="6" *ngFor="let item of arrayColeccion">
+      <ion-card>
+        <ion-card-header>
+          <ion-card-subtitle>{{item.data.descripcion}}</ion-card-subtitle>
+          <ion-card-title>{{item.data.titulo}}</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+          <ion-img [src]="item.data.enlace"></ion-img>
+          <p>{{item.data.constenidocorto}}</p>
+          <ion-grid fixed>
+            <ion-row>
+              <ion-col size="6">
+                <div color="new"  (click)="modal(item)"  >
+                  Leer Mas..
+                </div>
+              </ion-col>
+              <ion-col size="6" >
+                <div class="fb-share-button" data-href="http://afondocanaldigital.com.bo/noticias" data-layout="button" data-size="large"><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http%3A%2F%2Fafondocanaldigital.com.bo%2Fnoticias&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">
+                  <ion-icon class="share" slot="icon-only" name="share" ></ion-icon>
+                </a></div>
+
+
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-content>
+      </ion-card>
+    </ion-col>
+  </ion-row>
+</ion-grid>

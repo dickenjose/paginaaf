@@ -1,0 +1,35 @@
+<ion-header >
+  <ion-toolbar class="header" color="new">
+    <ion-title >Detalle</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrar()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-card>
+    <ion-card-header >
+      <ion-card-title class="subtitulo" >{{item.data.titulo}}</ion-card-title>
+      <ion-card-subtitle class="subtitulo" >{{item.data.fecha}}</ion-card-subtitle>
+      <div class="masnoticias">
+        <ion-button (click)="lanzarAction()"  fill="clear" >
+          <ion-icon class="boton" slot="icon-only" name="ellipsis-vertical" ></ion-icon>
+        </ion-button>
+      </div>
+
+    </ion-card-header>
+    <ion-card-content>
+      <iframe  class="frame" [src]='doom(item.data.enlace)'
+      width="310px" height="200"  style="border:none;overflow:hidden"
+      data-show-text="true" scrolling="no" frameborder="0"
+      allowfullscreen="true" allow="autoplay; clipboard-write;
+      encrypted-media; picture-in-picture; web-share" ></iframe>
+    <p>{{item.data.contenido }} </p>
+
+    </ion-card-content>
+
+  </ion-card>
+  <app-publicidad-banner></app-publicidad-banner>
+</ion-content>

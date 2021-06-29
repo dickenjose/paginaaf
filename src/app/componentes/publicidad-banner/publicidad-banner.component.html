@@ -1,0 +1,12 @@
+<ion-grid fixed class="ion-padding">
+  <ion-row *ngFor="let item of arrayColeccion">
+    <a class="enlace"  [href]='item.data.href'>
+      <ion-col size="12" >
+        <br>
+        <img  class="img" [src]="item.data.enlace" alt="">
+
+      </ion-col>
+    </a>
+
+  </ion-row>
+</ion-grid>

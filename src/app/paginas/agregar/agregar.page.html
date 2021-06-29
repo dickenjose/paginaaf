@@ -1,0 +1,56 @@
+<ion-header>
+  <ion-toolbar color="dark">
+    <ion-title>{{nombre}}</ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrar()">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list color="dark">
+    <ion-item>
+      <ion-label>Titulo:</ion-label>
+      <ion-input [(ngModel)]="tareaEditando.titulo" type="text"  placeholder="Titulo Noticia"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Descripcion:</ion-label>
+      <ion-input [(ngModel)]="tareaEditando.contenido" type="text" placeholder="Descripción Noticia"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Enlace:</ion-label>
+      <ion-input [(ngModel)]="tareaEditando.enlace" type="text" placeholder="Descripción Noticia"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Fecha:</ion-label>
+      <ion-input [(ngModel)]="tareaEditando.fecha" type="date" placeholder="Fecha Noticia"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Enlace Imagen:</ion-label>
+      <ion-input [(ngModel)]="tareaEditando.href" type="text" placeholder="Url Imagen"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Datos</ion-label>
+      <ion-select [(ngModel)]="tareaEditando.tipo" name="model" value="brown" okText="Aceptar" cancelText="Cancelar">
+        <ion-select-option value="imagen">Publicidad Imagen</ion-select-option>
+        <ion-select-option value="pVideo">Publicidad Video</ion-select-option>
+        <ion-select-option value="banner">Publicidad Banner</ion-select-option>
+        <ion-select-option value="video">Noticia Video</ion-select-option>
+        <ion-select-option value="nImagen">Noticias Imagen</ion-select-option>
+        <ion-select-option value="aFondo">A Fondo</ion-select-option>
+
+
+      </ion-select>
+    </ion-item>
+
+  </ion-list>
+  <ion-button (click)="cerrarConArgumentos()" expand="block" *ngIf="nombre==='Añadir Noticia'">
+    {{nombre}}
+  </ion-button>
+  <ion-button (click)="modificar()" expand="block" *ngIf="nombre==='Modificar Noticia'">
+    {{nombre}}
+  </ion-button>
+</ion-content>
